@@ -1,0 +1,29 @@
+{
+  "name": "deekshajuneja",
+  "version": "1.0.0",
+  "description": "deeksha's website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhimeshchauhan/deekshajuneja.git"
+  },
+  "keywords": [
+    "deeksha",
+    "website"
+  ],
+  "author": "bhimeshchauhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhimeshchauhan/deekshajuneja/issues"
+  },
+  "homepage": "https://github.com/bhimeshchauhan/deekshajuneja#readme",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  }
+}
