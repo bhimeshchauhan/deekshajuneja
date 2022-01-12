@@ -1,8 +1,8 @@
 {
-  "name": "deekshajuneja",
+  "name": "Deeksha",
   "version": "1.0.0",
   "private": true,
-  "description": "deekshajuneja",
+  "description": "Deeksha",
   "author": "bhimeshchauhan",
   "keywords": [
     "gatsby"
@@ -17,6 +17,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@types/styled-components": "^5.1.19",
     "babel-plugin-styled-components": "^2.0.2",
     "gatsby": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
@@ -29,6 +30,7 @@
     "gatsby-plugin-styled-components": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

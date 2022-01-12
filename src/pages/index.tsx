@@ -1,8 +1,11 @@
-import * as React from "react"
-import { createGlobalStyle } from 'styled-components';
+import * as React from "react";
+import { Layout } from "../components/layout";
 
 const IndexPage = () => {
-  return <h1>DOPE</h1>
-}
+  return (
+    <Layout>
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
