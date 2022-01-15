@@ -1,11 +1,11 @@
 import * as React from "react";
-import { Layout } from "../components/layout";
+import { IsMobile } from "../hooks/isMobile";
+import { MobileIndex } from "./mobileIndex";
+import { WebIndex } from "./webIndex";
 
 const IndexPage = () => {
-  return (
-    <Layout>
-    </Layout>
-  );
+  const isMobile = IsMobile();
+  return isMobile ? <MobileIndex /> : <WebIndex />;
 };
 
 export default IndexPage;

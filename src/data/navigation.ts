@@ -28,3 +28,8 @@ export const NavigationItems = [
     path: "/insta/",
   },
 ];
+
+export const ContactBtn = {
+  label: "Contact Me",
+  path: "/contact/",
+}

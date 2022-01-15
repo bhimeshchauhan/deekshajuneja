@@ -4,6 +4,8 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 4vh;
+  padding-right: 4vw;
   @media (max-width: 700px) {
     .nav {
       margin-left: -35px;
@@ -18,6 +20,9 @@ export const NavList = styled.div`
     .nav-list > a {
       width: 8.5vw;
     }
+  }
+  @media (max-width: 425px) {
+    flex-direction: column;
   }
 `;
 

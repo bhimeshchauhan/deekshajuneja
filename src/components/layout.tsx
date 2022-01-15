@@ -12,48 +12,63 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  height: auto;
+  height: 100vh;
   background-position: bottom;
-  padding: 3%;
+  padding: 0;
   position: relative;
   @media (max-width: 700px) {
-    min-height: 100vh;
-    height: auto;
     overflow: hidden;
+    padding: 3%;
   }
   background-color: #eace6b;
 `;
 
-export const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+export const Layout = ({ children }) => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={(data) => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: "description", content: siteMeta.description },
-            { name: "keywords", content: siteMeta.keywords.join(", ") },
-            { name: "author", content: siteMeta.author },
-            { name: "copyright", content: siteMeta.copyright },
-          ]}
-          link={[
-            { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
-          ]}
-        />
-        <Wrapper className={location.pathname === "/" ? "cutBackground" : ""}>
-          <Header />
-          {children}
-        </Wrapper>
-      </>
-    )}
-  />
-);
+      `}
+      render={(data) => (
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: "description", content: siteMeta.description },
+              { name: "keywords", content: siteMeta.keywords.join(", ") },
+              { name: "author", content: siteMeta.author },
+              { name: "copyright", content: siteMeta.copyright },
+            ]}
+            link={[
+              { rel: "shortcut icon", type: "image/png", href: `${favicon}` },
+              { rel: "preconnect", href: "https://fonts.googleapis.com" },
+              {
+                name: "viewport",
+                content: "initial-scale=1.0, width=device-width",
+              },
+              {
+                rel: "preconnect",
+                href: "https://fonts.gstatic.com",
+                crossOriginIsolated: true,
+              },
+              {
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Warnes&display=swap",
+              },
+            ]}
+          />
+          <Wrapper className={location.pathname === "/" ? "cutBackground" : ""}>
+            <Header />
+            {children}
+          </Wrapper>
+        </>
+      )}
+    />
+  );
+};
