@@ -27,7 +27,7 @@ export const NavList = styled.div`
   }
 `;
 
-export const ContactButton = styled.button`
+export const ContactButton = styled.button<{ bgColor }>`
   display: flex;
   width: 135px !important;
   height: 30px !important;
@@ -37,7 +37,10 @@ export const ContactButton = styled.button`
   border: none;
   cursor: pointer;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  :active { border-style: outset;}
+  background-color: ${({ bgColor }) => (bgColor ? "#eace6b" : "#FFF")};
+  :active {
+    border-style: outset;
+  }
   font-style: montserrat;
   font-weight: 700;
   font-size: 15px;

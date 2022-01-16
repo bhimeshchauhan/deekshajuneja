@@ -7,7 +7,7 @@ import { siteMeta } from "../data/seo";
 import favicon from "../assets/images/deeksha-favicon.svg";
 import { Header } from "./header/header";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ bgColor: string }>`
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,10 +20,16 @@ const Wrapper = styled.div`
     overflow: hidden;
     padding: 3%;
   }
-  background-color: #eace6b;
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : "#eace6b")};
 `;
 
-export const Layout = ({ children }) => {
+export const Layout = ({
+  children,
+  bgColor,
+}: {
+  children: React.ReactNode;
+  bgColor?: string;
+}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -63,8 +69,11 @@ export const Layout = ({ children }) => {
               },
             ]}
           />
-          <Wrapper className={location.pathname === "/" ? "cutBackground" : ""}>
-            <Header />
+          <Wrapper
+            className={location.pathname === "/" ? "cutBackground" : ""}
+            bgColor={bgColor}
+          >
+            <Header bgColor={bgColor} />
             {children}
           </Wrapper>
         </>

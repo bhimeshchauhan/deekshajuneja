@@ -5,17 +5,17 @@ import { ContactButton, Nav, NavList } from "../../styles/header.styles";
 import { MobileNav } from "./mobileNav";
 import { IsMobile } from "../../hooks/isMobile";
 
-export const Header = () => {
+export const Header = ({ bgColor }: { bgColor?: string }) => {
   const isMobile = IsMobile();
   return isMobile ? (
-    <MobileNav />
+    <MobileNav bgColor={bgColor} />
   ) : (
     <Nav>
       <NavList>
         {NavigationItems.map((navItem) => (
-          <NavLink info={navItem} key={navItem.label} />
+          <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />
         ))}
-        <ContactButton>Get In Touch</ContactButton>
+        <ContactButton bgColor={bgColor}>Get In Touch</ContactButton>
       </NavList>
     </Nav>
   );

@@ -62,22 +62,22 @@ const StyledMenu = styled.nav<{ open }>`
   }
 `;
 
-const MenuB = ({ open }) => {
+const MenuB = ({ open, bgColor }: { open: boolean; bgColor?: string }) => {
   return (
     <StyledMenu open={open}>
       <Nav>
         <NavList>
           {NavigationItems.map((navItem) => (
-            <NavLink info={navItem} key={navItem.label} />
+            <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />
           ))}
-          <NavLink info={ContactBtn} key={ContactBtn.label} />
+          <NavLink info={ContactBtn} key={ContactBtn.label} bgColor={bgColor} />
         </NavList>
       </Nav>
     </StyledMenu>
   );
 };
 
-const StyledBurger = styled.button<{ open }>`
+const StyledBurger = styled.button<{ open; bgColor }>`
   position: absolute;
   top: 5%;
   right: 2rem;
@@ -99,43 +99,65 @@ const StyledBurger = styled.button<{ open }>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => (open ? "#FFF" : "#FFF")};
+    // background: ${({ open }) => (open ? "#FFF" : "#FFF")};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+    background-color: ${({ bgColor }) => (bgColor ? "#eace6b" : "#FFF")};
 
-    :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+    // button animation style
+    transform: ${({ open }) => (open ? "rotate(30deg)" : "rotate(0)")};
+
+    :nth-child(1) {
+      width: 30px;
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
+      width: 40px;
     }
 
-    :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
-    }
+    // Another button animation style
+    // :first-child {
+    //   transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+    // }
+
+    // :nth-child(2) {
+    //   opacity: ${({ open }) => (open ? "0" : "1")};
+    //   transform: ${({ open }) =>
+      open ? "translateX(20px)" : "translateX(0)"};
+    // }
+
+    // :nth-child(3) {
+    //   transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+    // }
   }
 `;
 
-const Burger = ({ open, setOpen }) => {
+const Burger = ({
+  open,
+  setOpen,
+  bgColor,
+}: {
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
+  bgColor?: string;
+}) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <StyledBurger open={open} onClick={() => setOpen(!open)} bgColor={bgColor}>
       <div />
       <div />
       <div />
     </StyledBurger>
   );
 };
-export const MobileNav = () => {
+export const MobileNav = ({ bgColor }: { bgColor?: string }) => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   return (
     <div ref={node}>
-      <Burger open={open} setOpen={setOpen} />
-      <MenuB open={open} />
+      <Burger open={open} setOpen={setOpen} bgColor={bgColor} />
+      <MenuB open={open} bgColor={bgColor} />
     </div>
   );
 };
