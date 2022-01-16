@@ -65,7 +65,7 @@ export const Layout = ({
               },
               {
                 rel: "stylesheet",
-                href: "https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Warnes&display=swap",
+                href: "https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Sacramento&family=Warnes&display=swap",
               },
             ]}
           />

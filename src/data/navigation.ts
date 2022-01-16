@@ -19,17 +19,9 @@ export const NavigationItems = [
     label: "Projects",
     path: "/projects/",
   },
-  {
-    label: "Passions",
-    path: "/passion/",
-  },
-  {
-    label: "Instaractions",
-    path: "/insta/",
-  },
 ];
 
 export const ContactBtn = {
   label: "Contact Me",
   path: "/contact/",
-}
+};
