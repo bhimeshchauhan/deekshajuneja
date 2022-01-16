@@ -19,14 +19,19 @@ export const IntroImgCnt = styled.div`
 `;
 
 export const MeetMe = styled.img`
-  // position: absolute;
   bottom: 0;
   left: -30%;
-  margin: 0;
   max-width: 100%;
   height: auto;
   width: auto;
   transform: scale(1.5);
+  margin-bottom: 20vh;
+  @media (min-width: 1440px) {
+    margin-bottom: -18vh;
+  }
+  @media (min-width: 2560px) {
+    margin-bottom: -106vh;
+  }
 `;
 
 export const IntroContainer = styled.div`

@@ -22,6 +22,7 @@ export const NavList = styled.div`
     }
   }
   @media (max-width: 425px) {
+    align-items: flex-start;
     flex-direction: column;
   }
 `;
