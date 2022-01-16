@@ -45,7 +45,7 @@ export const Hello = styled.h1`
   font-family: Archivo Black, sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 45vw;
+  font-size: 35vw;
   color: #f2f7f6;
   mix-blend-mode: multiply;
 `;

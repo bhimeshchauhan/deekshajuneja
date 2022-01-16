@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
+import { Social } from "../../components/socials/socials";
 import Deeksha from "../../images/deek.png";
 import { MyNameIs } from "../../styles/mobile/mobileIndex.styles";
 import {
@@ -27,6 +28,7 @@ export const MobileIndex = () => {
           <MeetMe src={Deeksha} />
         </IntroImgCnt>
       </HomeContainer>
+      <Social />
     </Layout>
   );
 };
