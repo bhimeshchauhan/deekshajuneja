@@ -80,7 +80,7 @@ export const Work = styled.h2`
   font-family: Homemade Apple, cursive;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.73rem;
+  font-size: 2.3vw;
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   line-height: 10vh;
@@ -90,6 +90,6 @@ export const Work = styled.h2`
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 50vh;
+  margin-top: 40vh;
   margin-right: 5vw;
 `;

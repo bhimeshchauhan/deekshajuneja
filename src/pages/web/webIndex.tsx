@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
+import { Social } from "../../components/socials/socials";
 import deekshaMe from "../../images/deek.png";
 import {
   HomeContainer,
@@ -31,6 +32,7 @@ export const WebIndex = () => {
               </Work>
             </Description>
           </Introduction>
+          <Social />
         </IntroContainer>
       </HomeContainer>
     </Layout>

@@ -27,7 +27,7 @@ export const Dots = styled.div`
     #eace6b 30%,
     transparent 30%
   );
-  background-size: 20px 20px;
+  background-size: 21px 21px;
   background-repeat: repeat;
   background-position: 5px center;
   height: 100%;

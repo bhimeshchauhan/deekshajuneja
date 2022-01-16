@@ -8,12 +8,12 @@ export const NavigationItems = [
     path: "/about/",
   },
   {
-    label: "Skills",
-    path: "/skills/",
-  },
-  {
     label: "Experience",
     path: "/experience/",
+  },
+  {
+    label: "Skills",
+    path: "/skills/",
   },
   {
     label: "Projects",
