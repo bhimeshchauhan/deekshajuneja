@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
+import Deeksha from "../../images/deek.png";
+import { MyNameIs } from "../../styles/mobile/mobileIndex.styles";
 import {
-  Hello,
-  HomeContainer,
-  IntroContainer,
-  IntroImgCnt,
-  MeetMe,
-  MyNameIs,
   Name,
   Work,
-} from "../../styles/mobileIndex.styles";
-import Deeksha from "../../images/deek.png";
+  HomeContainer,
+  IntroContainer,
+  Hello,
+  IntroImgCnt,
+  MeetMe,
+} from "../../styles/mobile/mobileIndex.styles";
 
 export const MobileIndex = () => {
   return (

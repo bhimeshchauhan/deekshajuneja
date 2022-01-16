@@ -1,17 +1,17 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
+import deekshaMe from "../../images/deek.png";
 import {
-  Description,
-  Hello,
   HomeContainer,
-  IntroContainer,
-  Introduction,
   IntroImgCnt,
   MeetMe,
+  IntroContainer,
+  Introduction,
+  Hello,
   Name,
+  Description,
   Work,
-} from "../../styles/webIndex.styles";
-import deekshaMe from "../../images/deek.png";
+} from "../../styles/web/webIndex.styles";
 
 export const WebIndex = () => {
   return (
@@ -26,8 +26,8 @@ export const WebIndex = () => {
             <Name>I'm, Deeksha Juneja</Name>
             <Description>
               <Work>
-                A business woman, product manager, strategist, author, and makeup
-                artist
+                A business woman, product manager, strategist, author, and
+                makeup artist
               </Work>
             </Description>
           </Introduction>
