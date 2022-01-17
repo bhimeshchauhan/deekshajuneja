@@ -4,6 +4,7 @@ import NavLink from "./navLink";
 import { ContactBtn, NavigationItems } from "../../data/navigation";
 import { Nav, NavList } from "../../styles/header.styles";
 import styled from "styled-components";
+import { IsMobile } from "../../hooks/isMobile";
 
 // const useOnClickOutside = (ref, handler) => {
 //   React.useEffect(() => {
@@ -63,9 +64,10 @@ const StyledMenu = styled.nav<{ open }>`
 `;
 
 const MenuB = ({ open, bgColor }: { open: boolean; bgColor?: string }) => {
+  const isMobile = IsMobile();
   return (
     <StyledMenu open={open}>
-      <Nav>
+      <Nav isMobile={isMobile}>
         <NavList>
           {NavigationItems.map((navItem) => (
             <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />

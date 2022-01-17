@@ -4,13 +4,13 @@ import { SocialItems } from "../../data/social";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IsMobile } from "../../hooks/isMobile";
 
-const SocialRow = styled.div`
+const SocialRow = styled.div<{ alignCenter }>`
   display: flex;
   justify-content: space-around;
   width: 40%;
   position: absolute;
   bottom: 0;
-  right: 6%;
+  right: ${(alignCenter) => (alignCenter ? "unset" : "6%")};
 `;
 
 const MobileSocialRow = styled.div`
@@ -37,14 +37,14 @@ const Data = () => {
   );
 };
 
-export const Social = () => {
+export const Social = ({ alignCenter }: { alignCenter?: boolean }) => {
   const isMobile = IsMobile();
   return isMobile ? (
     <MobileSocialRow>
       <Data />
     </MobileSocialRow>
   ) : (
-    <SocialRow>
+    <SocialRow alignCenter={alignCenter}>
       <Data />
     </SocialRow>
   );

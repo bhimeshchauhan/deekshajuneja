@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ isMobile }>`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: ${({ isMobile }) => (isMobile ? "flex-start" : "flex-end")};
   padding-top: 4vh;
   padding-right: 4vw;
   @media (max-width: 700px) {

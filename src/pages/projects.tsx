@@ -1,7 +1,12 @@
 import * as React from "react";
+import { Layout } from "../components/layout";
 
 const ProjectsPage = () => {
-  return <div />;
+  return (
+    <Layout>
+      <div />
+    </Layout>
+  );
 };
 
 export default ProjectsPage;

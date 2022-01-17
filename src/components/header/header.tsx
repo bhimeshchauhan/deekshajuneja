@@ -11,7 +11,7 @@ export const Header = ({ bgColor }: { bgColor?: string }) => {
   return isMobile ? (
     <MobileNav bgColor={bgColor} />
   ) : (
-    <Nav>
+    <Nav isMobile={isMobile}>
       <NavList>
         {NavigationItems.map((navItem) => (
           <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />
