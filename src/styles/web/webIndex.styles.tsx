@@ -24,10 +24,20 @@ export const MeetMe = styled.img`
   max-width: 100%;
   height: auto;
   width: auto;
-  transform: scale(1.5);
-  margin-bottom: 20vh;
+  margin-bottom: -10vh;
+  @media (min-width: 768px) {
+    margin-bottom: 12vh;
+    transform: scale(1.3);
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: 4vh;
+    transform: scale(1);
+  }
   @media (min-width: 1440px) {
-    margin-bottom: -18vh;
+    margin-bottom: -12vh;
+    @media (max-height: 658px) {
+      margin-bottom: -35vh;
+    }
   }
   @media (min-width: 2560px) {
     margin-bottom: -106vh;
@@ -55,6 +65,9 @@ export const Hello = styled.div`
   position: absolute;
   top: 22.5%;
   right: 2vw;
+  @media (min-width: 2560px) {
+    font-size: 11vw;
+  }
 `;
 
 export const Name = styled.div`
@@ -69,6 +82,11 @@ export const Name = styled.div`
   position: absolute;
   padding-top: 23.5vh;
   right: 10vw;
+  @media (min-width: 2560px) {
+    font-size: 2vw;
+    padding-top: 21.5vh;
+    right: 8vw;
+  }
 `;
 
 export const Introduction = styled.div`
@@ -85,6 +103,9 @@ export const Work = styled.h2`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   line-height: 10vh;
   text-align: center;
+  @media (min-width: 2560px) {
+    font-size: 2vw;
+  }
 `;
 
 export const Description = styled.div`

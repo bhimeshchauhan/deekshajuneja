@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
 import { Social } from "../../components/socials/socials";
-import deekshaMe from "../../images/deek.png";
+import deekshaMe from "../../images/deek_formal.png";
 import {
   HomeContainer,
   IntroImgCnt,
