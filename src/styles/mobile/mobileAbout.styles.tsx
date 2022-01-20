@@ -40,7 +40,7 @@ export const TextContainer = styled.div`
 
 export const AboutDeeksha = styled.img`
   margin-bottom: -10vh;
-  margin-left: 25vw;
+  margin-left: 30vw;
   height: 45vh;
   transform: scale(2.5);
   padding-top: 14vh;

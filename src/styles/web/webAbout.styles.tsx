@@ -6,7 +6,7 @@ export const AboutContainer = styled.div`
 `;
 
 export const AboutDeekshaImageContainer = styled.div`
-  width: 45vw;
+  width: 30vw;
   margin: 17.5vh;
 `;
 
@@ -14,7 +14,7 @@ export const AboutDeeksha = styled.img`
   position: absolute;
   top: 20.2%;
   height: 70.5%;
-  left: 23vw;
+  left: 20vw;
 `;
 
 export const Dots = styled.div`
@@ -74,7 +74,7 @@ export const Sign = styled.p`
   font-size: 44px;
   line-height: 58px;
   color: #000000;
-  margin-top: 6vw;
+  margin-top: 4vw;
   text-align: right;
   text-shadow: 0px 5px 0px rgba(0, 0, 0, 0.25);
 `;
