@@ -12,10 +12,9 @@ export const AboutDeekshaImageContainer = styled.div`
 
 export const AboutDeeksha = styled.img`
   position: absolute;
-  top: 22%;
-  height: 69.2%;
-  left: 12vw;
-  margin-bottom: 0;
+  top: 20.2%;
+  height: 70.5%;
+  left: 23vw;
 `;
 
 export const Dots = styled.div`

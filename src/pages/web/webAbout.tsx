@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Layout } from "../../components/layout";
-import AboutDeekshaImg from "../../images/deek_about.png";
+import AboutDeekshaImg from "../../images/deek_smile.png";
 import {
   AboutContainer,
   AboutDeeksha,
@@ -25,7 +25,6 @@ export const WebAbout = () => {
         <AboutDeekshaContainer>
           <Overlay>
             <Title>Who am I?</Title>
-            <AboutDeeksha src={AboutDeekshaImg} />
           </Overlay>
           <TextContainer>
             <AboutText>

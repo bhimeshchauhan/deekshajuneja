@@ -27,7 +27,7 @@ export const TextContainer = styled.div`
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 0%,
-    #eace6b 30%,
+    #eace6b 15%,
     #eace6b 100%
   );
   height: 100%;
@@ -35,11 +35,15 @@ export const TextContainer = styled.div`
   border-top-right-radius: 15px;
   overflow: auto;
   padding: 6vw;
+  z-index: 10;
 `;
 
 export const AboutDeeksha = styled.img`
   margin-bottom: -10vh;
-  margin-left: -10vw;
+  margin-left: 25vw;
+  height: 45vh;
+  transform: scale(2.5);
+  padding-top: 14vh;
 `;
 
 export const Title = styled.h1`
@@ -49,7 +53,7 @@ export const Title = styled.h1`
   font-size: 2rem;
   line-height: 2.7;
   margin-bottom: -3vh;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 export const AboutText = styled.p``;

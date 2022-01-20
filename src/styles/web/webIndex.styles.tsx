@@ -30,7 +30,7 @@ export const MeetMe = styled.img`
     transform: scale(1.3);
   }
   @media (min-width: 1024px) {
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
     transform: scale(1);
   }
   @media (min-width: 1440px) {
