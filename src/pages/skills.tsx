@@ -3,7 +3,7 @@ import { Layout } from "../components/layout";
 
 const SkillsPage = () => {
   return (
-    <Layout bgColor={"#FFF"}>
+    <Layout bgcolor={"#FFF"}>
       <div />
     </Layout>
   );

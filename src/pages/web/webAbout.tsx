@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Layout } from "../../components/layout";
-import AboutDeekshaImg from "../../images/deek_smile.png";
+import AboutDeekshaImg from "../../images/deeksha_smile.png";
 import {
   AboutContainer,
   AboutDeeksha,
@@ -15,12 +15,30 @@ import {
 } from "../../styles/web/webAbout.styles";
 
 export const WebAbout = () => {
+  const [xPos, setXPos] = useState(10);
+  const [yPos, setYPos] = useState(10);
+  const walk = -15;
   return (
-    <Layout bgColor={"#FFF"}>
+    <Layout bgcolor={"#FFF"}>
       <AboutContainer>
         <AboutDeekshaImageContainer>
           <Dots />
-          <AboutDeeksha src={AboutDeekshaImg} />
+          <AboutDeeksha
+            src={AboutDeekshaImg}
+            posX={xPos}
+            posY={yPos}
+            onMouseMove={(e) => {
+              console.log(e);
+              let x = e.nativeEvent.offsetX;
+              let y = e.nativeEvent.offsetY;
+              const width = e.currentTarget.offsetWidth;
+              const height = e.currentTarget.offsetHeight;
+              const xWalk = Math.round((x / width) * walk - walk / 2);
+              const yWalk = Math.round((y / height) * walk - walk / 2);
+              setXPos(xWalk);
+              setYPos(yWalk);
+            }}
+          />
         </AboutDeekshaImageContainer>
         <AboutDeekshaContainer>
           <Overlay>

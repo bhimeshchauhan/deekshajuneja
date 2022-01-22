@@ -2,14 +2,14 @@ import Link from "gatsby-link";
 import React from "react";
 import styled from "styled-components";
 
-const LinkNav = styled(Link)<{ bgColor }>`
+const LinkNav = styled(Link)<{ bgcolor }>`
   color: #e2f2f7;
   margin-right: 35px;
   transition: color 0.2s ease-out;
   text-decoration: none;
   white-space: nowrap;
   > span {
-    color: ${({ bgColor }) => (bgColor ? "#eace6b" : "#FFF")};
+    color: ${({ bgcolor }) => (bgcolor ? "#eace6b" : "#FFF")};
   }
   @media (max-width: 700px) {
     margin-right: 14px;
@@ -32,12 +32,12 @@ const NavLabel = styled.span`
 
 const NavLink = ({
   info,
-  bgColor,
+  bgcolor,
 }: {
   info: { path: string; label: string };
-  bgColor?: string;
+  bgcolor?: string;
 }) => (
-  <LinkNav to={info.path} activeClassName="active" bgColor={bgColor}>
+  <LinkNav to={info.path} activeClassName="active" bgcolor={bgcolor}>
     <NavLabel>{info.label}</NavLabel>
   </LinkNav>
 );

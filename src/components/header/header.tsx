@@ -6,18 +6,18 @@ import { MobileNav } from "./mobileNav";
 import { IsMobile } from "../../hooks/isMobile";
 import { navigate } from "gatsby-link";
 
-export const Header = ({ bgColor }: { bgColor?: string }) => {
+export const Header = ({ bgcolor }: { bgcolor?: string }) => {
   const isMobile = IsMobile();
   return isMobile ? (
-    <MobileNav bgColor={bgColor} />
+    <MobileNav bgcolor={bgcolor} />
   ) : (
     <Nav isMobile={isMobile}>
       <NavList>
         {NavigationItems.map((navItem) => (
-          <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />
+          <NavLink info={navItem} key={navItem.label} bgcolor={bgcolor} />
         ))}
         <ContactButton
-          bgColor={bgColor}
+          bgcolor={bgcolor}
           onClick={() => {
             navigate(ContactBtn.path);
           }}

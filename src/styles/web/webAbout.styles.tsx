@@ -10,11 +10,14 @@ export const AboutDeekshaImageContainer = styled.div`
   margin: 17.5vh;
 `;
 
-export const AboutDeeksha = styled.img`
+export const AboutDeeksha = styled.img<{ posX: number; posY: number }>`
   position: absolute;
   top: 20.2%;
   height: 70.5%;
   left: 20vw;
+  filter: ${({ posX, posY }) => {
+    return `drop-shadow(${posX}px ${posY}px 8px #222)`;
+  }};
 `;
 
 export const Dots = styled.div`

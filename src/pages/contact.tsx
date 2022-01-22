@@ -12,7 +12,7 @@ import {
 const ContactPage = () => {
   const isMobile = IsMobile();
   return (
-    <Layout bgColor={"#FFF"}>
+    <Layout bgcolor={"#FFF"}>
       <CoffeeContainer isMobile={isMobile}>
         <CoffeeImg src={Cups} />
       </CoffeeContainer>

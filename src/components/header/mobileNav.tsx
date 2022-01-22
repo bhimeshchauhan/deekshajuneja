@@ -63,23 +63,23 @@ const StyledMenu = styled.nav<{ open }>`
   }
 `;
 
-const MenuB = ({ open, bgColor }: { open: boolean; bgColor?: string }) => {
+const MenuB = ({ open, bgcolor }: { open: boolean; bgcolor?: string }) => {
   const isMobile = IsMobile();
   return (
     <StyledMenu open={open}>
       <Nav isMobile={isMobile}>
         <NavList>
           {NavigationItems.map((navItem) => (
-            <NavLink info={navItem} key={navItem.label} bgColor={bgColor} />
+            <NavLink info={navItem} key={navItem.label} bgcolor={bgcolor} />
           ))}
-          <NavLink info={ContactBtn} key={ContactBtn.label} bgColor={bgColor} />
+          <NavLink info={ContactBtn} key={ContactBtn.label} bgcolor={bgcolor} />
         </NavList>
       </Nav>
     </StyledMenu>
   );
 };
 
-const StyledBurger = styled.button<{ open; bgColor }>`
+const StyledBurger = styled.button<{ open; bgcolor }>`
   position: absolute;
   top: 5%;
   right: 2rem;
@@ -106,7 +106,7 @@ const StyledBurger = styled.button<{ open; bgColor }>`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-    background-color: ${({ bgColor }) => (bgColor ? "#eace6b" : "#FFF")};
+    background-color: ${({ bgcolor }) => (bgcolor ? "#eace6b" : "#FFF")};
 
     // button animation style
     transform: ${({ open }) => (open ? "rotate(30deg)" : "rotate(0)")};
@@ -139,27 +139,27 @@ const StyledBurger = styled.button<{ open; bgColor }>`
 const Burger = ({
   open,
   setOpen,
-  bgColor,
+  bgcolor,
 }: {
   open?: boolean;
   setOpen?: (open: boolean) => void;
-  bgColor?: string;
+  bgcolor?: string;
 }) => {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)} bgColor={bgColor}>
+    <StyledBurger open={open} onClick={() => setOpen(!open)} bgcolor={bgcolor}>
       <div />
       <div />
       <div />
     </StyledBurger>
   );
 };
-export const MobileNav = ({ bgColor }: { bgColor?: string }) => {
+export const MobileNav = ({ bgcolor }: { bgcolor?: string }) => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   return (
     <div ref={node}>
-      <Burger open={open} setOpen={setOpen} bgColor={bgColor} />
-      <MenuB open={open} bgColor={bgColor} />
+      <Burger open={open} setOpen={setOpen} bgcolor={bgcolor} />
+      <MenuB open={open} bgcolor={bgcolor} />
     </div>
   );
 };

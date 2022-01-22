@@ -13,7 +13,7 @@ import {
 
 export const MobileAbout = () => {
   return (
-    <Layout bgColor={"#FFF"}>
+    <Layout bgcolor={"#FFF"}>
       <AboutWrapper>
         <Overlay>
           <Title>Who am I?</Title>
