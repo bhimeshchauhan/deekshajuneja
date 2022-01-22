@@ -23,11 +23,11 @@ export const SocialContainer = styled.div`
 
 export const CompanyLogo = styled.div<{ bg }>`
   position: absolute;
-  height: 25%;
-  width: 25%;
+  height: 20%;
+  width: 20%;
   background-image: ${(props) => `url(${props.bg})`};
   top: 33%;
-  left: 39.5%;
+  left: 40%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -43,6 +43,7 @@ export const Controls = styled.div`
 
 export const ExpInfo = styled.div`
   align-self: flex-start;
+  height: 90%;
   > h1 {
     font-size: 2rem;
   }
@@ -68,6 +69,12 @@ export const ExpResp = styled.div`
   display: flex;
   flex-direction: column;
   filter: drop-shadow(2px 4px 6px black);
+  padding: 2%;
+  > h2 {
+    align-self: flex-end;
+    font-style: italic;
+    margin-right: 2vw;
+  }
 `;
 
 export const RespList = styled.ul`
@@ -75,6 +82,7 @@ export const RespList = styled.ul`
   margin-left: 14vw;
   margin-right: 2vw;
   overflow: auto;
+  text-align: right;
   > li {
     font-style: italic;
   }
@@ -104,6 +112,16 @@ export const ControlButton = styled.button`
   text-transform: uppercase;
 `;
 
+export const ExpInfoDetail = styled.div`
+  padding-right: 10vw;
+  overflow: auto;
+  height: 70%;
+  margin-top: 3%;
+  > p {
+    font-style: italic;
+  }
+`;
+
 export const WebExperience = () => {
   const [expIndex, setExpIndex] = useState(0);
   return (
@@ -112,9 +130,14 @@ export const WebExperience = () => {
         <ExpCompanyDetails>
           <ExpInfo>
             <h1>{ExperienceItem[expIndex].name}</h1>
-            <ExpInfoText>{ExperienceItem[expIndex].position}</ExpInfoText>
-            <ExpInfoText>{ExperienceItem[expIndex].year}</ExpInfoText>
-            <ExpInfoText>{ExperienceItem[expIndex].location}</ExpInfoText>
+            <ExpInfoText>
+              {ExperienceItem[expIndex].position} |{" "}
+              {ExperienceItem[expIndex].year} |{" "}
+              {ExperienceItem[expIndex].location}
+            </ExpInfoText>
+            <ExpInfoDetail>
+              <p>{ExperienceItem[expIndex].about}</p>
+            </ExpInfoDetail>
           </ExpInfo>
           <Controls>
             <ControlButton
@@ -136,6 +159,7 @@ export const WebExperience = () => {
           </Controls>
         </ExpCompanyDetails>
         <ExpResp>
+          <h2>What I worked on?</h2>
           <RespList>
             {ExperienceItem[expIndex].responsibilities.map((item) => (
               <li key={item}>{item}</li>

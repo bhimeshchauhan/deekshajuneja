@@ -19,7 +19,7 @@ export const ExpCompanyDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 2%;
-  flex: 1;    
+  flex: 1;
   border-top-right-radius: 35px;
   border-bottom-right-radius: 35px;
 `;
@@ -35,11 +35,11 @@ export const ExpResp = styled.div`
 
 export const CompanyLogo = styled.div<{ bg }>`
   position: absolute;
-  height: 25%;
-  width: 25%;
+  height: 30%;
+  width: 30%;
   background-image: ${(props) => `url(${props.bg})`};
-  top: 28.5%;
-  left: 39%;
+  top: 21.5%;
+  left: 30%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -49,16 +49,17 @@ export const CompanyLogo = styled.div<{ bg }>`
 export const ExpInfo = styled.div`
   align-self: flex-start;
   > h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
 `;
 
 export const ExpInfoText = styled.h4`
   margin-bottom: 0;
+  width: 82%;
 `;
 
 export const RespList = styled.ul`
-  margin-top: 30vw;
+  margin-top: 20vw;
   margin-left: 14vw;
   margin-right: 20vw;
   overflow: auto;
@@ -66,6 +67,39 @@ export const RespList = styled.ul`
   > li {
     font-style: italic;
   }
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  width: 28%;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 2%;
+`;
+
+export const ControlButton = styled.button`
+  display: flex;
+  width: 10vw;
+  height: 10vw;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: white;
+  margin: 4% 0;
+  align-items: center;
+  :active {
+    border-style: outset;
+  }
+  font-style: montserrat;
+  font-weight: 700;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
 export const MobileExperience = () => {
@@ -76,9 +110,29 @@ export const MobileExperience = () => {
         <ExpCompanyDetails>
           <ExpInfo>
             <h1>{ExperienceItem[expIndex].name}</h1>
-            <ExpInfoText>{ExperienceItem[expIndex].position}</ExpInfoText>
-            <ExpInfoText>{ExperienceItem[expIndex].year}</ExpInfoText>
-            <ExpInfoText>{ExperienceItem[expIndex].location}</ExpInfoText>
+            <ExpInfoText>
+              {ExperienceItem[expIndex].position} |{" "}
+              {ExperienceItem[expIndex].year} |{" "}
+              {ExperienceItem[expIndex].location}
+            </ExpInfoText>
+            <Controls>
+              <ControlButton
+                onClick={() => {
+                  setExpIndex(expIndex - 1);
+                }}
+                disabled={expIndex === 0}
+              >
+                {"<"}
+              </ControlButton>
+              <ControlButton
+                onClick={() => {
+                  setExpIndex(expIndex + 1);
+                }}
+                disabled={expIndex === ExperienceItem.length - 1}
+              >
+                {">"}
+              </ControlButton>
+            </Controls>
           </ExpInfo>
         </ExpCompanyDetails>
         <ExpResp>
