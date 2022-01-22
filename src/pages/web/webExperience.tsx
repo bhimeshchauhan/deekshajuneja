@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 import { Social } from "../../components/socials/socials";
-import { IsMobile } from "../../hooks/isMobile";
 import { Layout } from "../../components/layout";
-import { Transition } from "react-transition-group";
 import { ExperienceItem } from "../../data/experience";
 
 export const ExpCompanyDetails = styled.div`
@@ -29,10 +27,11 @@ export const CompanyLogo = styled.div<{ bg }>`
   width: 25%;
   background-image: ${(props) => `url(${props.bg})`};
   top: 33%;
-  left: 39%;
+  left: 39.5%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  filter: drop-shadow(2px 4px 6px black);
 `;
 
 export const Controls = styled.div`
@@ -68,6 +67,7 @@ export const ExpResp = styled.div`
   align-content: flex-end;
   display: flex;
   flex-direction: column;
+  filter: drop-shadow(2px 4px 6px black);
 `;
 
 export const RespList = styled.ul`
@@ -80,31 +80,32 @@ export const RespList = styled.ul`
   }
 `;
 
-const duration = 300;
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0,
-};
-
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 },
-};
+export const ControlButton = styled.button`
+  display: flex;
+  width: 135px !important;
+  height: 30px !important;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: #eace6b;
+  :active {
+    border-style: outset;
+  }
+  font-style: montserrat;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+`;
 
 export const WebExperience = () => {
-  const isMobile = IsMobile();
-  const [expIndex, setExpIndex] = useState(1);
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    setTimeout(() => setShow(true), 1000);
-  }, []);
-  useEffect(() => {
-    setShow(false);
-    const showTimeout = setTimeout(() => setShow(true), 1000);
-    return () => clearTimeout(showTimeout);
-  }, [expIndex]);
+  const [expIndex, setExpIndex] = useState(0);
   return (
     <Layout>
       <ExpContainer>
@@ -116,22 +117,22 @@ export const WebExperience = () => {
             <ExpInfoText>{ExperienceItem[expIndex].location}</ExpInfoText>
           </ExpInfo>
           <Controls>
-            <button
+            <ControlButton
               onClick={() => {
                 setExpIndex(expIndex - 1);
               }}
               disabled={expIndex === 0}
             >
               PREV
-            </button>
-            <button
+            </ControlButton>
+            <ControlButton
               onClick={() => {
                 setExpIndex(expIndex + 1);
               }}
               disabled={expIndex === ExperienceItem.length - 1}
             >
               NEXT
-            </button>
+            </ControlButton>
           </Controls>
         </ExpCompanyDetails>
         <ExpResp>
@@ -142,18 +143,7 @@ export const WebExperience = () => {
           </RespList>
         </ExpResp>
       </ExpContainer>
-      <Transition in={show} timeout={duration}>
-        {(state) => (
-          <div
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[state],
-            }}
-          >
-            <CompanyLogo bg={ExperienceItem[expIndex].logo} />
-          </div>
-        )}
-      </Transition>
+      <CompanyLogo bg={ExperienceItem[expIndex].logo} />
       <SocialContainer>
         <Social alignCenter={true} />
       </SocialContainer>
