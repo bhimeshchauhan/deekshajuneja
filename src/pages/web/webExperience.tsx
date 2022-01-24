@@ -1,173 +1,151 @@
-import React, { useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import React from "react";
 import styled from "styled-components";
 import { Social } from "../../components/socials/socials";
 import { Layout } from "../../components/layout";
-import { ExperienceItem } from "../../data/experience";
-
-export const ExpCompanyDetails = styled.div`
-  height: 65%;
-  background: white;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2%;
-  flex: 1;
-`;
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: space-around;
 `;
 
-export const CompanyLogo = styled.div<{ bg }>`
-  position: absolute;
-  height: 20%;
-  width: 20%;
-  background-image: ${(props) => `url(${props.bg})`};
-  top: 33%;
-  left: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  filter: drop-shadow(2px 4px 6px black);
-`;
-
-export const Controls = styled.div`
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
-  align-items: center;
-`;
-
-export const ExpInfo = styled.div`
-  align-self: flex-start;
-  height: 90%;
-  > h1 {
-    font-size: 2rem;
-  }
-`;
-
-export const ExpInfoText = styled.h4`
-  margin-bottom: 0;
-`;
-
 export const ExpContainer = styled.div`
   display: flex;
-  margin-top: 7vw;
-  height: 100%;
+  margin: 7vw;
+  flex-direction: column;
   @media (min-width: 1440px) {
     margin-top: 4vw;
   }
 `;
 
-export const ExpResp = styled.div`
-  height: 65%;
-  flex: 1;
-  align-content: flex-end;
+export const Line = styled.ul`
+  display: flex;
+  margin: 0;
+  height: fit-content;
+  align-items: center;
+`;
+
+export const Divider = styled.hr`
+  width: 100%;
+  margin: 0;
+`;
+
+export const LineItem = styled.li`
+  list-style: none;
+  height: 1vw;
+  margin: 0;
+  margin: 0 0.3vw;
+  :hover {
+    transform: scale(1.5);
+    margin: 0 0.6vw;
+  }
+`;
+
+export const ListDetail = styled.div`
   display: flex;
   flex-direction: column;
-  filter: drop-shadow(2px 4px 6px black);
-  padding: 2%;
-  > h2 {
-    align-self: flex-end;
-    font-style: italic;
-    margin-right: 2vw;
+  width: 1vw;
+  height: 1vw;
+  background-color: #fff;
+  border-radius: 1vw;
+  :hover {
+    cursor: pointer;
   }
 `;
 
-export const RespList = styled.ul`
-  margin-top: auto;
-  margin-left: 14vw;
-  margin-right: 2vw;
-  overflow: auto;
-  text-align: right;
-  > li {
-    font-style: italic;
-  }
+export const Card = styled.div`
+  background-color: white;
+  margin: 0 2vw;
 `;
 
-export const ControlButton = styled.button`
-  display: flex;
-  width: 135px !important;
-  height: 30px !important;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background: #eace6b;
-  :active {
-    border-style: outset;
+export const SlideContainer = styled.div`
+  .slick-slide.slick-center img {
+    transform: scale(1.1);
+    margin-left: auto;
+    margin-right: auto;
   }
-  font-style: montserrat;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
+  .slick-center {
+    background-color: red;
+  }
+  .slick-center {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    transform: scale(1.25);
+}
 `;
 
-export const ExpInfoDetail = styled.div`
-  padding-right: 10vw;
-  overflow: auto;
-  height: 70%;
-  margin-top: 3%;
-  > p {
-    font-style: italic;
-  }
-`;
+export const CenterMode = () => {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "0px",
+    slidesToShow: 3,
+    speed: 500,
+  };
+  return (
+    <SlideContainer>
+      <Slider {...settings}>
+        <Card>
+          <h3>1</h3>
+        </Card>
+        <Card>
+          <h3>2</h3>
+        </Card>
+        <Card>
+          <h3>3</h3>
+        </Card>
+        <Card>
+          <h3>4</h3>
+        </Card>
+        <Card>
+          <h3>5</h3>
+        </Card>
+        <Card>
+          <h3>6</h3>
+        </Card>
+      </Slider>
+    </SlideContainer>
+  );
+};
+
+export const TimeLine = () => {
+  return (
+    <Line>
+      <Divider />
+      <LineItem>
+        <ListDetail></ListDetail>
+      </LineItem>
+      <Divider />
+      <LineItem>
+        <ListDetail></ListDetail>
+      </LineItem>
+      <Divider />
+      <LineItem>
+        <ListDetail></ListDetail>
+      </LineItem>
+      <Divider />
+      <LineItem>
+        <ListDetail></ListDetail>
+      </LineItem>
+      <Divider />
+      <LineItem>
+        <ListDetail></ListDetail>
+      </LineItem>
+      <Divider />
+    </Line>
+  );
+};
 
 export const WebExperience = () => {
-  const [expIndex, setExpIndex] = useState(0);
   return (
     <Layout>
       <ExpContainer>
-        <ExpCompanyDetails>
-          <ExpInfo>
-            <h1>{ExperienceItem[expIndex].name}</h1>
-            <ExpInfoText>
-              {ExperienceItem[expIndex].position} |{" "}
-              {ExperienceItem[expIndex].year} |{" "}
-              {ExperienceItem[expIndex].location}
-            </ExpInfoText>
-            <ExpInfoDetail>
-              <p>{ExperienceItem[expIndex].about}</p>
-            </ExpInfoDetail>
-          </ExpInfo>
-          <Controls>
-            <ControlButton
-              onClick={() => {
-                setExpIndex(expIndex - 1);
-              }}
-              disabled={expIndex === 0}
-            >
-              PREV
-            </ControlButton>
-            <ControlButton
-              onClick={() => {
-                setExpIndex(expIndex + 1);
-              }}
-              disabled={expIndex === ExperienceItem.length - 1}
-            >
-              NEXT
-            </ControlButton>
-          </Controls>
-        </ExpCompanyDetails>
-        <ExpResp>
-          <h2>What I worked on?</h2>
-          <RespList>
-            {ExperienceItem[expIndex].responsibilities.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </RespList>
-        </ExpResp>
+        <TimeLine />
+        <CenterMode />
       </ExpContainer>
-      <CompanyLogo bg={ExperienceItem[expIndex].logo} />
       <SocialContainer>
         <Social alignCenter={true} />
       </SocialContainer>
