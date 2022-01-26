@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Social } from "../../components/socials/socials";
 import { Layout } from "../../components/layout";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from "nuka-carousel";
 
 export const SocialContainer = styled.div`
   display: flex;
@@ -20,11 +18,16 @@ export const ExpContainer = styled.div`
   }
 `;
 
-export const Line = styled.ul`
+export const Line = styled.ul<{ index: number }>`
   display: flex;
   margin: 0;
   height: fit-content;
   align-items: center;
+  & li:nth-of-type(${(props) => props.index + 1}) {
+    transform: scale(6);
+    transition-duration: 0.5s;
+    margin: 0 4vw;
+  }
 `;
 
 export const Divider = styled.hr`
@@ -34,13 +37,12 @@ export const Divider = styled.hr`
 
 export const LineItem = styled.li`
   list-style: none;
-  height: 1vw;
+  height: 4vw;
   margin: 0;
-  margin: 0 0.3vw;
-  :hover {
-    transform: scale(1.5);
-    margin: 0 0.6vw;
-  }
+  margin: 0 0.9vw;
+  align-items: center;
+  display: flex;
+  transition-duration: 0.5s;
 `;
 
 export const ListDetail = styled.div`
@@ -50,6 +52,7 @@ export const ListDetail = styled.div`
   height: 1vw;
   background-color: #fff;
   border-radius: 1vw;
+  animation: pulse 5s;
   :hover {
     cursor: pointer;
   }
@@ -60,60 +63,81 @@ export const Card = styled.div`
   margin: 0 2vw;
 `;
 
-export const SlideContainer = styled.div`
-  .slick-slide.slick-center img {
-    transform: scale(1.1);
-    margin-left: auto;
-    margin-right: auto;
+export const ExpCarousel = styled(Carousel)`
+  margin-top: 7vh;
+  .slider-frame {
+    height: 60vh !important;
   }
-  .slick-center {
-    background-color: red;
+  .slider-control-centerleft {
+    left: -6% !important;
+    button {
+      background-color: transparent;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      :hover {
+        cursor: pointer;
+      }
+    }
   }
-  .slick-center {
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    transform: scale(1.25);
-}
+  .slider-control-centerright {
+    right: -6% !important;
+    button {
+      background-color: transparent;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
 `;
 
-export const CenterMode = () => {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "0px",
-    slidesToShow: 3,
-    speed: 500,
-  };
+export const CenterMode = ({ index, setCurrentSlide }) => {
   return (
-    <SlideContainer>
-      <Slider {...settings}>
-        <Card>
-          <h3>1</h3>
-        </Card>
-        <Card>
-          <h3>2</h3>
-        </Card>
-        <Card>
-          <h3>3</h3>
-        </Card>
-        <Card>
-          <h3>4</h3>
-        </Card>
-        <Card>
-          <h3>5</h3>
-        </Card>
-        <Card>
-          <h3>6</h3>
-        </Card>
-      </Slider>
-    </SlideContainer>
+    <ExpCarousel
+      wrapAround={true}
+      renderCenterLeftControls={({ previousSlide }) => (
+        <button
+          onClick={() => {
+            previousSlide();
+            setCurrentSlide(index === 0 ? 4 : index - 1);
+          }}
+        >
+          {"<"}
+        </button>
+      )}
+      renderCenterRightControls={({ nextSlide }) => (
+        <button
+          onClick={() => {
+            nextSlide();
+            setCurrentSlide(index === 4 ? 0 : index + 1);
+          }}
+        >
+          {">"}
+        </button>
+      )}
+      speed={1000}
+    >
+      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
+      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
+      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
+      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
+      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
+    </ExpCarousel>
   );
 };
 
-export const TimeLine = () => {
+export const TimeLine = ({ index }) => {
   return (
-    <Line>
+    <Line index={index}>
       <Divider />
       <LineItem>
         <ListDetail></ListDetail>
@@ -140,11 +164,15 @@ export const TimeLine = () => {
 };
 
 export const WebExperience = () => {
+  const [index, setIndex] = useState(0);
+  const setCurrentSlide = (slideIndex: number) => {
+    setIndex(slideIndex);
+  };
   return (
     <Layout>
       <ExpContainer>
-        <TimeLine />
-        <CenterMode />
+        <TimeLine index={index} />
+        <CenterMode index={index} setCurrentSlide={setCurrentSlide} />
       </ExpContainer>
       <SocialContainer>
         <Social alignCenter={true} />

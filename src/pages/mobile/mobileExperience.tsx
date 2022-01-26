@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 import { Social } from "../../components/socials/socials";
 import { Layout } from "../../components/layout";
