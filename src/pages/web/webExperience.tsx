@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Social } from "../../components/socials/socials";
 import { Layout } from "../../components/layout";
 import Carousel from "nuka-carousel";
+import { ExperienceItem } from "../../data/experience";
 
 export const SocialContainer = styled.div`
   display: flex;
@@ -24,9 +25,9 @@ export const Line = styled.ul<{ index: number }>`
   height: fit-content;
   align-items: center;
   & li:nth-of-type(${(props) => props.index + 1}) {
-    transform: scale(6);
+    transform: scale(1.7);
     transition-duration: 0.5s;
-    margin: 0 4vw;
+    margin: 0 5vw;
   }
 `;
 
@@ -45,14 +46,20 @@ export const LineItem = styled.li`
   transition-duration: 0.5s;
 `;
 
-export const ListDetail = styled.div`
+export const ListDetail = styled.div<{ img }>`
   display: flex;
   flex-direction: column;
   width: 1vw;
   height: 1vw;
-  background-color: #fff;
   border-radius: 1vw;
   animation: pulse 5s;
+  transform: scale(6);
+  margin: 0 2vw;
+  background-image: ${(props) => `url(${props.img})`};
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center;
   :hover {
     cursor: pointer;
   }
@@ -108,7 +115,9 @@ export const CenterMode = ({ index, setCurrentSlide }) => {
         <button
           onClick={() => {
             previousSlide();
-            setCurrentSlide(index === 0 ? 4 : index - 1);
+            setCurrentSlide(
+              index === 0 ? ExperienceItem.length - 1 : index - 1
+            );
           }}
         >
           {"<"}
@@ -118,19 +127,22 @@ export const CenterMode = ({ index, setCurrentSlide }) => {
         <button
           onClick={() => {
             nextSlide();
-            setCurrentSlide(index === 4 ? 0 : index + 1);
+            setCurrentSlide(
+              index === ExperienceItem.length - 1 ? 0 : index + 1
+            );
           }}
         >
           {">"}
         </button>
       )}
       speed={1000}
+      renderBottomCenterControls={null}
+      dragging={false}
     >
       <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
       <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
       <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
       <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
-      <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
     </ExpCarousel>
   );
 };
@@ -139,26 +151,16 @@ export const TimeLine = ({ index }) => {
   return (
     <Line index={index}>
       <Divider />
-      <LineItem>
-        <ListDetail></ListDetail>
-      </LineItem>
-      <Divider />
-      <LineItem>
-        <ListDetail></ListDetail>
-      </LineItem>
-      <Divider />
-      <LineItem>
-        <ListDetail></ListDetail>
-      </LineItem>
-      <Divider />
-      <LineItem>
-        <ListDetail></ListDetail>
-      </LineItem>
-      <Divider />
-      <LineItem>
-        <ListDetail></ListDetail>
-      </LineItem>
-      <Divider />
+      {ExperienceItem.map((item) => {
+        return (
+          <>
+            <LineItem>
+              <ListDetail img={item.logo} />
+            </LineItem>
+            <Divider />
+          </>
+        );
+      })}
     </Line>
   );
 };
