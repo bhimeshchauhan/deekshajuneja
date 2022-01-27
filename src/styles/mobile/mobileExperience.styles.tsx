@@ -44,7 +44,8 @@ export const CompanyLogo = styled.div<{ bg }>`
 export const ExpInfo = styled.div`
   align-self: flex-start;
   > h1 {
-    font-size: 1.7rem;
+    font-size: 7vw;
+    width: 78vw;
   }
 `;
 
