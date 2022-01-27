@@ -24,6 +24,14 @@ export const Line = styled.ul<{ index: number }>`
     transform: scale(2);
     transition-duration: 0.5s;
     margin: 0 5vw;
+    @media (min-width: 2560px) {
+      transform: scale(3);
+      margin: 0 2vw;
+    }
+    @media (min-width: 1440px) {
+      transform: scale(2);
+      margin: 0 4vw;
+    }
   }
 `;
 
@@ -35,11 +43,13 @@ export const Divider = styled.hr`
 export const LineItem = styled.li`
   list-style: none;
   height: 4vw;
-  margin: 0;
   margin: 0 2vw;
   align-items: center;
   display: flex;
   transition-duration: 0.5s;
+  @media (min-width: 2560px) {
+    margin: 0 1vw;
+  }
 `;
 
 export const ListDetail = styled.div<{ img }>`
@@ -58,6 +68,14 @@ export const ListDetail = styled.div<{ img }>`
   :hover {
     cursor: pointer;
   }
+  @media (min-width: 2560px) {
+    transform: scale(1.5);
+    margin: 0;
+  }
+  @media (min-width: 1440px) {
+    transform: scale(4);
+    margin: 0;
+  }
 `;
 
 export const Card = styled.div`
@@ -68,11 +86,26 @@ export const Card = styled.div`
 export const ExpCarousel = styled(Carousel)`
   margin-top: 7vh;
   .slider-frame {
-    height: 60vh !important;
+    height: 55vw !important;
     background-color: white;
     box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
     margin: 0 12px;
     border-radius: 25px;
+    @media (min-width: 768px) {
+      height: 46vw !important;
+    }
+    @media (min-width: 1024px) {
+      height: 50vw !important;
+      @media (max-height: 658px) {
+        height: 32vw !important;
+      }
+    }
+    @media (min-width: 1440px) {
+      height: 23vw !important;
+    }
+    @media (min-width: 2560px) {
+      height: 8vw !important;
+    }
   }
   .slider-control-centerleft {
     left: -6% !important;
@@ -114,7 +147,7 @@ export const Responsibility = styled.div`
   overflow: auto;
   height: 20vh;
   font-style: italic;
-  margin-top: 10%;
+  margin-top: 4%;
   background: /* Shadow covers */ linear-gradient(
       white 30%,
       rgba(255, 255, 255, 0)
