@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout } from "../layout";
-import AboutDeekshaImg from "../../images/deeksha_smile.png";
+import AboutDeekshaImg from "../../assets/images/deeksha_smile.png";
 import {
   AboutContainer,
   AboutDeeksha,

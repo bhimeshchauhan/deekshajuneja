@@ -1,7 +1,7 @@
-import Acropolis from "../images/acropolis.png";
-import JCS from "../images/jcs.png";
-import Kinnami from "../images/kinnami.png";
-import Solstice from "../images/solstice.png";
+import Acropolis from "../assets/images/acropolis.png";
+import JCS from "../assets/images/jcs.png";
+import Kinnami from "../assets/images/kinnami.png";
+import Solstice from "../assets/images/solstice.png";
 
 export type experienceType = {
   name: string;

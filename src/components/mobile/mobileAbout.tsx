@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Layout } from "../layout";
-import AboutDeekshaImg from "../../images/deek_smile.png";
+import AboutDeekshaImg from "../../assets/images/deek_smile.png";
 import {
   AboutDeeksha,
   AboutText,

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Layout } from "../../components/layout";
 import { Social } from "../../components/socials/socials";
 import { IsMobile } from "../../hooks/isMobile";
-import Cups from "../../images/cups.png";
+import Cups from "../../assets/images/cups.png";
 import {
   CoffeeContainer,
   CoffeeImg,
