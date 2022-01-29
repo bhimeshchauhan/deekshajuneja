@@ -91,6 +91,7 @@ export const ExpCarousel = styled(Carousel)`
     box-shadow: 0px 0px 42px 7px rgba(0, 0, 0, 0.15);
     margin: 0 12px;
     border-radius: 25px;
+    overflow: auto;
     @media (min-width: 768px) {
       height: 46vw !important;
     }
@@ -101,7 +102,10 @@ export const ExpCarousel = styled(Carousel)`
       }
     }
     @media (min-width: 1440px) {
-      height: 23vw !important;
+      height: 32vw !important;
+      @media (max-height: 658px) {
+        height: 23vw !important;
+      }
     }
     @media (min-width: 2560px) {
       height: 8vw !important;
@@ -140,7 +144,7 @@ export const ExpCarousel = styled(Carousel)`
 `;
 
 export const EmploymentCardContainer = styled.div`
-  margin: 10.2%;
+  margin: 10vh;
 `;
 
 export const Responsibility = styled.div`

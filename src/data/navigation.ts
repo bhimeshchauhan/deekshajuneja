@@ -11,14 +11,14 @@ export const NavigationItems = [
     label: "Experience",
     path: "/experience/",
   },
-  // {
-  //   label: "Skills",
-  //   path: "/skills/",
-  // },
-  // {
-  //   label: "Projects",
-  //   path: "/projects/",
-  // },
+  {
+    label: "Skills",
+    path: "/skills/",
+  },
+  {
+    label: "Projects",
+    path: "/projects/",
+  },
 ];
 
 export const ContactBtn = {
