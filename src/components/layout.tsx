@@ -6,6 +6,7 @@ import "../styles/global.css";
 import { siteMeta } from "../data/seo";
 import favicon from "../assets/images/deeksha-favicon.svg";
 import { Header } from "./header/header";
+import { Location } from "@reach/router";
 
 const Wrapper = styled.div<{ bgcolor: string }>`
   width: 100%;
@@ -69,13 +70,19 @@ export const Layout = ({
               },
             ]}
           />
-          <Wrapper
-            className={location.pathname === "/" ? "cutBackground" : ""}
-            bgcolor={bgcolor}
-          >
-            <Header bgcolor={bgcolor} />
-            {children}
-          </Wrapper>
+          <Location>
+            {({ location }) => {
+              return (
+                <Wrapper
+                  className={location.pathname === "/" ? "cutBackground" : ""}
+                  bgcolor={bgcolor}
+                >
+                  <Header bgcolor={bgcolor} />
+                  {children}
+                </Wrapper>
+              );
+            }}
+          </Location>
         </>
       )}
     />
