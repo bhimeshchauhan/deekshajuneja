@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkDeeksha=self.webpackChunkDeeksha||[]).push([[519],{1669:function(e,n,t){t.r(n);var u=t(7294),l=t(913);n.default=function(){return u.createElement(l.A,null,u.createElement("div",null))}}}]);
+//# sourceMappingURL=component---src-pages-deekshajuneja-projects-tsx-4fe804ce28c2f6bf4dfb.js.map
