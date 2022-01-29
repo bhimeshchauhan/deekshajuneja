@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Layout } from "../../../components/layout";
-import AboutDeekshaImg from "../../../images/deek_smile.png";
+import { Layout } from "../layout";
+import AboutDeekshaImg from "../../images/deek_smile.png";
 import {
   AboutDeeksha,
   AboutText,
@@ -9,7 +9,7 @@ import {
   Sign,
   TextContainer,
   Title,
-} from "../../../styles/mobile/mobileAbout.styles";
+} from "../../styles/mobile/mobileAbout.styles";
 
 export const MobileAbout = () => {
   return (
@@ -33,9 +33,7 @@ export const MobileAbout = () => {
             I like reading, writing and trying new ways to express myself via
             makeup.
           </AboutText>
-          <Sign>
-            Deeksha Juneja
-          </Sign>
+          <Sign>Deeksha Juneja</Sign>
         </TextContainer>
       </AboutWrapper>
     </Layout>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IsMobile } from "../../hooks/isMobile";
-import { MobileExperience } from "./mobile/mobileExperience";
-import { WebExperience } from "./web/webExperience";
+import { MobileExperience } from "../../components/mobile/mobileExperience";
+import { WebExperience } from "../../components/web/webExperience";
 
 const ExperiencePage = () => {
   const isMobile = IsMobile();

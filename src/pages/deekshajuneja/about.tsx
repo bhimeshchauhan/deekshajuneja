@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IsMobile } from "../../hooks/isMobile";
-import { MobileAbout } from "./mobile/mobileAbout";
-import { WebAbout } from "./web/webAbout";
+import { MobileAbout } from "../../components/mobile/mobileAbout";
+import { WebAbout } from "../../components/web/webAbout";
 
 const AboutPage = () => {
   const isMobile = IsMobile();

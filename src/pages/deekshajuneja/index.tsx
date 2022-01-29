@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IsMobile } from "../../hooks/isMobile";
-import { MobileIndex } from "./mobile/mobileIndex";
-import { WebIndex } from "./web/webIndex";
+import { MobileIndex } from "../../components/mobile/mobileIndex";
+import { WebIndex } from "../../components/web/webIndex";
 
 const IndexPage = () => {
   const isMobile = IsMobile();

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Layout } from "../../../components/layout";
-import { Social } from "../../../components/socials/socials";
-import deekshaMe from "../../../images/deek_50.png";
+import { Layout } from "../layout";
+import { Social } from "../socials/socials";
+import deekshaMe from "../../images/deek_50.png";
 import {
   HomeContainer,
   IntroImgCnt,
@@ -12,7 +12,7 @@ import {
   Name,
   Description,
   Work,
-} from "../../../styles/web/webIndex.styles";
+} from "../../styles/web/webIndex.styles";
 
 export const WebIndex = () => {
   return (
