@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Layout } from "../../components/layout";
-import AboutDeekshaImg from "../../images/deek_smile.png";
+import { Layout } from "../../../components/layout";
+import AboutDeekshaImg from "../../../images/deek_smile.png";
 import {
   AboutDeeksha,
   AboutText,
@@ -9,7 +9,7 @@ import {
   Sign,
   TextContainer,
   Title,
-} from "../../styles/mobile/mobileAbout.styles";
+} from "../../../styles/mobile/mobileAbout.styles";
 
 export const MobileAbout = () => {
   return (

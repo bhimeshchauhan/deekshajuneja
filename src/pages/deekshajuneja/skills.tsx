@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Layout } from "../components/layout";
-import { BusinessSkills } from "../data/skills";
+import { Layout } from "../../components/layout";
+import { BusinessSkills } from "../../data/skills";
 
 export const CardContainer = styled.div`
   height: 100%;

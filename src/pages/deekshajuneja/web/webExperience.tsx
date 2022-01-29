@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Social } from "../../components/socials/socials";
-import { Layout } from "../../components/layout";
-import { ExperienceItem } from "../../data/experience";
+import { Social } from "../../../components/socials/socials";
+import { Layout } from "../../../components/layout";
+import { ExperienceItem } from "../../../data/experience";
 import {
   EmploymentCardContainer,
   Title,
@@ -14,7 +14,7 @@ import {
   ExpContainer,
   SocialContainer,
   Header,
-} from "../../styles/web/webExperience.styles";
+} from "../../../styles/web/webExperience.styles";
 
 export const EmploymentCard = ({ employment }) => {
   return (

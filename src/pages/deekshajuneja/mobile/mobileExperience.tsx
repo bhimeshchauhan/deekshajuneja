@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Social } from "../../components/socials/socials";
-import { Layout } from "../../components/layout";
-import { ExperienceItem } from "../../data/experience";
+import { Social } from "../../../components/socials/socials";
+import { Layout } from "../../../components/layout";
+import { ExperienceItem } from "../../../data/experience";
 import {
   ExpContainer,
   ExpCompanyDetails,
@@ -12,7 +12,7 @@ import {
   ExpResp,
   RespList,
   CompanyLogo,
-} from "../../styles/mobile/mobileExperience.styles";
+} from "../../../styles/mobile/mobileExperience.styles";
 
 export const MobileExperience = () => {
   const [expIndex, setExpIndex] = useState(1);

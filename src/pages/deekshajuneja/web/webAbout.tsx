@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Layout } from "../../components/layout";
-import AboutDeekshaImg from "../../images/deeksha_smile.png";
+import { Layout } from "../../../components/layout";
+import AboutDeekshaImg from "../../../images/deeksha_smile.png";
 import {
   AboutContainer,
   AboutDeeksha,
@@ -12,7 +12,7 @@ import {
   Sign,
   TextContainer,
   Title,
-} from "../../styles/web/webAbout.styles";
+} from "../../../styles/web/webAbout.styles";
 
 export const WebAbout = () => {
   const [xPos, setXPos] = useState(10);

@@ -1,27 +1,27 @@
 export const NavigationItems = [
   {
     label: "Home",
-    path: "/",
+    path: "/deekshajuneja/",
   },
   {
     label: "About Me",
-    path: "/about/",
+    path: "/deekshajuneja/about/",
   },
   {
     label: "Experience",
-    path: "/experience/",
+    path: "/deekshajuneja/experience/",
   },
   {
     label: "Skills",
-    path: "/skills/",
+    path: "/deekshajuneja/skills/",
   },
   {
     label: "Projects",
-    path: "/projects/",
+    path: "/deekshajuneja/projects/",
   },
 ];
 
 export const ContactBtn = {
   label: "Contact Me",
-  path: "/contact/",
+  path: "/deekshajuneja/contact/",
 };
