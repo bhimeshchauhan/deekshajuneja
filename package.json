@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && cp ./src/CNAME public/ &&gh-pages -d public --branch master && git clean -fd && git stash"
+    "deploy": "gatsby build && gh-pages -d public -b master && git clean -fd && git stash"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
